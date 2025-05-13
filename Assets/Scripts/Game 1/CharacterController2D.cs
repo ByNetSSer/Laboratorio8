@@ -1,16 +1,21 @@
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class CharacterController2D : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private Rigidbody2D myRgbd2d;
+    [SerializeField] private float velocity;
+    [SerializeField] private Vector2 Vector;
+    private void Awake()
     {
-        
+        myRgbd2d = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        myRgbd2d.AddForce((Vector * velocity));
+    }
+    public void Onmovement(InputAction.CallbackContext context)
+    {
+        Vector = context.ReadValue<Vector2>();
+        //myRgbd2d.AddForce(context.ReadValue<Vector2>()*velocity);
     }
 }
