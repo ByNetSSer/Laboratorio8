@@ -21,11 +21,7 @@ public class ColorPowerUpManager : MonoBehaviour
         {
             ConcurrentState--;
             ChangeColorSelection();
-
-
         }
-        
-        
     }
     public void OnNextColor(InputAction.CallbackContext context)
     {
