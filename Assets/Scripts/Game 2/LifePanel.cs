@@ -19,5 +19,6 @@ public class LifePanel : MonoBehaviour
     private void OnLifeUpdate(int life)
     {
         Life.text = "" + life;
+        Debug.Log("Cambie");
     }
 }

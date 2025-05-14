@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3d5fced10d9c340914f6e20d40a68f, type: 3}
   m_Name: anaranjado
   m_EditorClassIdentifier: 
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.9921569, g: 0.6431373, b: 0.050980397, a: 1}

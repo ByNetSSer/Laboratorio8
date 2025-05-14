@@ -17,6 +17,7 @@ public class Coin : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             GameManager.Instance.GainCoin();
+            Destroy(this.gameObject);
         }
     }
 }

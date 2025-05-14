@@ -5,6 +5,7 @@ public class ColorPropety : MonoBehaviour
     [SerializeField] protected ColorData colorData;
     [SerializeField] protected MeshRenderer meshRenderer;
     protected Material _material;
+    
     private void Awake()
     {
        meshRenderer = GetComponent<MeshRenderer>();

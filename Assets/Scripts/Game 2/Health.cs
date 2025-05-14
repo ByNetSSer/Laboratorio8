@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             GameManager.Instance.ModifyLife( LifeRecover);
+            Destroy(this.gameObject);
         }
     }
 }

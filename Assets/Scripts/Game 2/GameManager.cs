@@ -30,38 +30,33 @@ public class GameManager : MonoBehaviour
     {
         Playerlife += modify;
         OnLifeUpdate.Invoke(Playerlife);
+        ValidateLife();
     }
     public void CheckWin()
     {
         Debug.Log("Ganaste");
     }
+    public void Lose()
+    {
+        Debug.Log("Perdiste");
+    }
     private void ValidateLife()
     {
         if (Playerlife <= 0)
         {
-            Debug.Log("perdiste");
             OnLosse.Invoke();
         }
        
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Lose")
-        {
-            OnLosse.Invoke();
 
-        }
-        if (other.gameObject.tag =="Win")
-        {
-            OnWin.Invoke();
-        }
-    }
     private void OnEnable()
     {
         OnWin += CheckWin;
+        OnLosse += Lose;
     }
     private void OnDisable()
     {
         OnWin -= CheckWin;
+        OnLosse -= Lose;
     }
 }

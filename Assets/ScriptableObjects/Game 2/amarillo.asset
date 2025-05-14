@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc3d5fced10d9c340914f6e20d40a68f, type: 3}
   m_Name: amarillo
   m_EditorClassIdentifier: 
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.9960785, g: 0.9803922, b: 0.043137256, a: 1}
