@@ -1,16 +1,23 @@
 using UnityEngine;
-
+using TMPro;
+using System;
 public class CoinPanel : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField]private TextMeshProUGUI Coins;
+    private void Awake()
     {
-        
+        Coins = GetComponent<TextMeshProUGUI>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        GameManager.OnCoinUpdate += OncoinUpdate;
+    }
+    private void OnDisable()
+    {
+        GameManager.OnCoinUpdate -= OncoinUpdate;
+    }
+    private void OncoinUpdate(int coins)
+    {
+        Coins.text = ""+coins;
     }
 }

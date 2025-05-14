@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] Vector3 AngleRotatios;
+    private void Update()
     {
-        
+        QuaternionRotatiom();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void QuaternionRotatiom()
     {
-        
+        Quaternion rotation = Quaternion.Euler(AngleRotatios);
+        transform.rotation = transform.rotation* rotation;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            GameManager.Instance.GainCoin();
+        }
     }
 }

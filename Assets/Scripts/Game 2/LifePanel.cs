@@ -1,16 +1,23 @@
 using UnityEngine;
-
+using TMPro;
 public class LifePanel : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private TextMeshProUGUI Life;
+    private void Awake()
     {
-        
+        Life=GetComponent<TextMeshProUGUI>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        GameManager.OnLifeUpdate += OnLifeUpdate;
+
+    }
+    private void OnDisable()
+    {
+        GameManager.OnLifeUpdate -= OnLifeUpdate;
+    }
+    private void OnLifeUpdate(int life)
+    {
+        Life.text = "" + life;
     }
 }

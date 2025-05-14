@@ -12,9 +12,7 @@ public class CharacterControler3D : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Vector3 forcemovement = new Vector3( Vector.x,0,Vector.z);
-        //MyRGBD.linearVelocity = forcemovement * Speed;
-        MyRGBD.AddForce(forcemovement * Speed);
+        ApplyPhysics();
     }
     public void OnMovement(InputAction.CallbackContext context)
     {
@@ -26,6 +24,8 @@ public class CharacterControler3D : MonoBehaviour
     }
     public void ApplyPhysics()
     {
-
+        Vector3 forcemovement = new Vector3(Vector.x, 0, Vector.z);
+        //MyRGBD.linearVelocity = forcemovement * Speed;
+        MyRGBD.AddForce(forcemovement * Speed);
     }
 }
